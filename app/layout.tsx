@@ -20,8 +20,8 @@ export default function RootLayout({
       <body className={inter.className}>
         <header>
           <nav className="flex justify-evenly">
-            <Link href={"/"}>Home</Link>
-            <Link href={"/helloworld"}>Hello World</Link>
+            <Link href={"./"}>Home</Link>
+            <Link href={"./helloworld"}>Hello World</Link>
           </nav>
         </header>
         {children}

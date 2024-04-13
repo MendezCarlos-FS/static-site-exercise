@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: "export"
+    basePath: "/static-site-exercise",
+    output: "export",
 };
 
 export default nextConfig;

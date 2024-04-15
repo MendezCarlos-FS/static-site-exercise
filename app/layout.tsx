@@ -21,7 +21,7 @@ export default function RootLayout({
         <header>
           <nav className="flex justify-evenly">
             <Link href={"./"}>Home</Link>
-            <Link href={"./helloworld"}>Hello World</Link>
+            <Link href={"./post"}>Post</Link>
           </nav>
         </header>
         {children}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +24,9 @@ export default function RootLayout({
             <Link href={"/"}>Home</Link>
           </nav>
         </header>
-        {children}
+        <Suspense>
+          {children}
+        </Suspense>
         <footer className="bottom-0">
           <h4>Made with Next.js</h4>
           <h4>Made by Carlos Mendez</h4>

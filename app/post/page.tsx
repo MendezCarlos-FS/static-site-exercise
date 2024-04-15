@@ -1,10 +1,15 @@
 'use client'
-export default function Post({searchParams}: { searchParams: { title: string, body: string } }) {
-    let title = searchParams.title.trim();
-    let body = searchParams.body.trim();
 
-    function createMarkup() {
-        return {__html: title+body};
+import { useSearchParams } from "next/navigation";
+
+export default function Post() {
+    const searchParams = useSearchParams();
+
+    let title = searchParams.get("title")?.trim() || "";
+    let body = searchParams.get("body")?.trim() || "";
+
+    function createMarkup(): {__html: string} {
+        return {__html: `<div>${title+body}</div>`};
     }
 
     return (

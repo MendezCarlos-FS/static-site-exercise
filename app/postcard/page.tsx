@@ -3,8 +3,8 @@ import Link from "next/link";
 export default function PostCard(props: any) {
     const title = props.post?.title;
 
-    function createMarkup() {
-        return {__html: title};
+    function createMarkup(): {__html: string} {
+        return {__html: `<div>${title}</div>`};
     }
 
     return (

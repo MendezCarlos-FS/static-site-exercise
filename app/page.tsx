@@ -1,6 +1,5 @@
-import Post from "./post/page";
-
-const fs = require("fs");
+import fs from "fs";
+import PostCard from "./postcard/page";
 
 export default function Home() {
   const posts: any[] = [];
@@ -12,10 +11,9 @@ export default function Home() {
   }));
 
   function displayPosts() {
-    console.log("POST");
-    const postTitles = posts.map(post => {
+    const postTitles = posts.map((post, index) => {
       return (
-        <h3>{post.title}</h3>
+        <PostCard key={index} post={post}/>
       );
     });
     return postTitles;

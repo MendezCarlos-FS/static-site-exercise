@@ -24,9 +24,9 @@ export default function RootLayout({
           </nav>
         </header>
         {children}
-        <footer className="absolute bottom-0">
+        <footer className="bottom-0">
           <h4>Made with Next.js</h4>
-          <h4>Made by Carlos Mendez as an exercise</h4>
+          <h4>Made by Carlos Mendez</h4>
         </footer>
       </body>
     </html>

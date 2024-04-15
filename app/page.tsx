@@ -11,7 +11,9 @@ export default function Home() {
   }));
 
   function displayPosts() {
-    const postTitles = posts.map((post, index) => {
+    const postTitles = posts
+    .filter(post => post.title && post.body)
+    .map((post, index) => {
       return (
         <PostCard key={index} post={post}/>
       );
@@ -21,7 +23,7 @@ export default function Home() {
 
   return (
     <main className="flex flex-col items-center justify-between p-5 gap-10">
-      <h1>This is the home page.</h1>
+      <h1>Available Posts</h1>
       {displayPosts()}
     </main>
   );

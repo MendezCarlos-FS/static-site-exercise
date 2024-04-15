@@ -1,13 +1,18 @@
 import Link from "next/link";
 
 export default function PostCard(props: any) {
-    console.log(props);
+    const title = props.post?.title;
+
+    function createMarkup() {
+        return {__html: title};
+    }
+
     return (
-        <Link href={{
-            pathname: "/post",
-            query: props.post
-        }}>
-            <h3>{props.post?.title}</h3>
-        </Link>
+        <Link className="border-2 border-black rounded p-5"
+            href={{
+                pathname: "/post",
+                query: props.post
+            }}
+        dangerouslySetInnerHTML={createMarkup()}/>
     )
 }

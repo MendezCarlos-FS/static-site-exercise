@@ -1,18 +1,14 @@
 'use client'
-import { useRouter } from "next/navigation";
-
 export default function Post({searchParams}: { searchParams: { title: string, body: string } }) {
-    const router = useRouter();
-    console.log(searchParams);
-    // const title = props.post?.title;
-    // const body = props.post?.body;
-    let title = searchParams.title;
-    let body = searchParams.body;
+    let title = searchParams.title.trim();
+    let body = searchParams.body.trim();
+
+    function createMarkup() {
+        return {__html: title+body};
+    }
 
     return (
-        <article className="flex flex-col items-center justify-between p-2">
-            <h2>{title}</h2>
-            <p>{body}</p>
-        </article>
+        <article className="flex flex-col items-center justify-between p-10 gap-5"
+            dangerouslySetInnerHTML={createMarkup()}/>
     );
 }
